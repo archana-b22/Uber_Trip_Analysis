@@ -10,16 +10,16 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded"
 )
-
+           
 # ----------------------------------------------------
 # CUSTOM CSS STYLING
 # ----------------------------------------------------
 st.markdown("""
 <style>
-
-div.block-container {
+.block-container{
     padding-top: 1rem !important;
 }
+
 
 h1, h2, h3 {
     color: #FFD700 !important;       /* Golden headings */
@@ -43,7 +43,7 @@ h1, h2, h3 {
 # ----------------------------------------------------
 # LOAD DATA
 # ----------------------------------------------------
-df = pd.read_csv("./dashboard/uber_cleaned_data.csv")
+df = pd.read_csv("uber_cleaned_data.csv")
 
 df["date"] = pd.to_datetime(df["date"])
 
@@ -96,6 +96,7 @@ least_busy_day = df_filtered.loc[df_filtered["trips"].idxmin()]["date"].date()
 trips_on_least_busy_day = df_filtered["trips"].min()
 most_active_base = df_filtered["dispatching_base_number"].mode()[0]
 
+st.markdown("---")
 # ----------------------------------------------------
 # KPI DISPLAY
 # ----------------------------------------------------
@@ -111,11 +112,13 @@ col4.metric("Most Active Base", most_active_base)
 st.markdown("---")
 
 # ----------------------------------------------------
+tab1, tab2 = st.tabs(["📊 Charts", "📁 Data"])
 # CHARTS
 # ----------------------------------------------------
 
 # TRIPS OVER TIME
-st.subheader("📈 Uber Trips Over Time")
+with tab1: 
+   st.subheader("📈 Uber Trips Over Time")
 fig1 = px.line(df_filtered, x="date", y="trips", title="", markers=False)
 st.plotly_chart(fig1, use_container_width=True)
 
@@ -133,3 +136,14 @@ st.plotly_chart(fig3, use_container_width=True)
 st.subheader("🍕 Trips Percentage by Weekday")
 fig4 = px.pie(df_filtered, names="weekday", values="trips")
 st.plotly_chart(fig4, use_container_width=True)
+## TAB 2:  DATA PREVIEW
+with tab2:
+    st.subheader("📁 Filtered Dataset")
+    st.dataframe(df_filtered)
+    st.download_button(
+        label="  download Filtered Data",
+    data=df_filtered.to_csv(index=False),
+    file_name="uber_filtered_data.csv",mime="text/csv"
+    )
+
+
