@@ -80,7 +80,7 @@ Uber trips over time
 
 📸 Excel Dashboard Screenshot
 
-![Excel Dashboard](./Screenshot_2025-12-02_111305-1.png)
+![Excel Dashboard](./excel_dashboard.png)
 
 
 ---

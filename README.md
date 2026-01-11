@@ -1,166 +1,132 @@
-🚕 Uber Trip Analysis – Data Analytics Project
+🚖 Uber Trip Analysis
 
-A complete end-to-end analysis using Excel, SQL, Python & Streamlit
+📌 Project Overview
+This project focuses on analyzing Uber trip data to uncover meaningful insights related to trip patterns, demand trends, peak hours, and vehicle activity.
+The analysis is performed using Python, SQL, Excel, and data visualization techniques, with a Streamlit dashboard for interactive exploration.
+The goal of this project is to demonstrate end-to-end data analysis skills, from raw data processing to insights and visualization.
 
-This project analyzes Uber trip patterns to uncover insights such as busiest days, peak hours, most active bases, and demand distribution across months and weekdays.
-It includes dashboards, visualizations, and a fully interactive Streamlit web app.
-
-
----
-
+🛠️ Tech Stack
+Python (Pandas, NumPy, Matplotlib, Seaborn)
+SQL (SQLite)
+Excel
+Streamlit (Dashboard)
+VS Code
 📂 Project Structure
+Copy code
 
 Uber_Trip_Analysis/
 │
-├── dashboard/                     # Streamlit web app
-│     └── app.py
+├── dataset/                # Raw Uber dataset
 │
-├── dataset/                       # Raw & cleaned datasets
-│     └── uber_cleaned_data.csv
+├── excel/                  # Cleaned data & Excel analysis
 │
-├── excel/                         # Excel dashboard
-│     └── Uber_Trip_Analysis_Dashboard.xlsx
+├── python/                 # Python analysis scripts
+│   └── uber_analysis.py
 │
-├── images/                        # Charts & visuals
-│     ├── trips_over_time_line.png
-│     ├── trips_per_month.png
-│     ├── trips_per_weekday.png
-│     ├── correlation_heatmap.png
-│     └── active_vehicles_per_base.png
+├── sql/                    # SQL database and queries
+│   ├── uber.db
+│   └── queries.sql
 │
-├── python/                        # Python data cleaning & analysis
-│     └── uber_analysis.py
+├── images/                 # Saved plots & visualizations
 │
-├── report/                        # Final project report
-│     ├── Uber_Trip_Analysis_Report.md
-│     └── Uber_Trip_Analysis_Report.pdf
+├── dashboard/              # Streamlit dashboard
+│   └── app.py
 │
-└── sql/                           # SQL database
-      └── uber.db
+├── report/                 # Screenshots & report files
+│
+└── README.md
 
+📊 Data Analysis Performed
 
----
+🔹 Python Analysis
+Data cleaning and preprocessing
+Feature engineering (weekday, month, hour)
+Trip distribution analysis
+Time-based trend analysis
+Visualization using Matplotlib & Seaborn
+Saved plots for documentation
+Python file:
 
-📊 Project Highlights
+python/uber_analysis.py
 
-✔ Tools & Technologies
+🔹 SQL Analysis
+SQL queries were written using SQLite to analyze the data efficiently.
+Queries include:
+Total number of trips
+Trips per month
+Trips per weekday
+Peak hour analysis
+Active vehicles per day
 
-Excel – Dashboard creation
+SQL file location:
 
-SQL – Querying and data extraction
+sql/queries.sql
 
-Python (Pandas, Plotly) – Data cleaning & visualization
+🔹 Excel Analysis
 
-Streamlit – Interactive web dashboard
+Pivot tables
+Summary statistics
+Dashboard-style analysis
 
-GitHub – Version control and project hosting
+Excel files are stored in:
 
+excel/
 
+📈 Visualizations
+All generated plots are saved inside the images folder.
+Examples include:
+Trips per month
+Trips per weekday
+Trips over time
+Correlation heatmap
+Active vehicles trend
 
----
+🖼️ Sample Visualizations
 
-📈 Excel Dashboard Insights
+### Trips Per Month
+![Trips Per Month](images/trips_per_month.png)
 
-Total Trips
+### Trips Per Weekday
+![Trips Per Weekday](images/trips_per_weekday.png)
 
-Trips Over Time
+### Trips Over Time
+![Trips Over Time](images/trips_over_time_line.png)
 
-Trips Per Month
+### Correlation Heatmap
+![Correlation Heatmap](images/correlation_heatmap.png)
 
-Trips By Weekday
+### Active Vehicles
+![Active Vehicles](images/active_vehicles.png)
 
-Busiest / Least Busy Day
+🖥️ Streamlit Dashboard
 
-Most Active Base
+An interactive dashboard was built using Streamlit to visualize Uber trip insights dynamically.
 
+To run the dashboard:
 
-📌 Dashboard file available in /excel/Uber_Trip_Analysis_Dashboard.xlsx
+streamlit run dashboard/app.py
 
+📸 Dashboard Screenshots
 
----
 
-🌐 Streamlit Dashboard
 
-A full interactive dashboard built using Streamlit.
+### Dashboard Preview
+![Dashboard Overview](report/excel_dashboard.png)
+![Dahboard Overview](report/Screenshot_2025-12-02_122120.png)
+![Dahboard Overview](report/Screenshot_2025-12-02_22228.png)
+![Dahboard Overview](report/Screenshot_2025-12-02_122040.png)
+![Dahboard Overview](report/Screenshot_2025-12-02_122301.png)
+![Dahboard Overview](report/Screenshot_2025-12-02_122340.png)
+![Dahboard Overview](report/Screenshot_2025-12-02_122411.png)
 
-Features
+📌 Key Insights
+Highest number of trips occur during peak working hours
+Weekdays show higher demand compared to weekends
+Monthly trends indicate seasonal variations
+Strong correlation between time and trip volume
 
-✔ Filters by Month, Weekday, Base, Date Range
-✔ Total trip count
-✔ Busiest & least busy days
-✔ Interactive charts
+🚀 Conclusion
+This project demonstrates an end-to-end data analysis workflow, combining Python, SQL, Excel, and visualization tools to extract actionable insights from real-world Uber trip data.
 
-📌 Code available in: /dashboard/app.py
-📌 Screenshots available in: /report/screenshots/
-
-
----
-
-🧠 Key Insights
-
-February 14 was the busiest day
-
-January 27 was the least busy day
-
-Base B02764 had the highest number of trips
-
-Weekends showed higher demand than weekdays
-
-Trips gradually increased across months
-
-
-
----
-
-🏗 How to Run the Streamlit App
-
-cd dashboard
-streamlit run app.py
-
-
----
-
-🧹 Python Data Cleaning
-
-Performed tasks:
-
-Handling missing values
-
-Converting date formats
-
-Creating new columns (weekday, month, base stats)
-
-Generating visualizations
-
-
-Code in: /python/uber_analysis.py
-
-
----
-
-📜 Final Report
-
-A full project report with screenshots and explanations.
-
-📌 Available in:
-
-/report/Uber_Trip_Analysis_Report.md
-
-/report/Uber_Trip_Analysis_Report.pdf
-
-
-
----
-
-🙌 Author
-
-B ARCHANA
-GitHub: https://github.com/archana-b22
-LinkedIn: https://www.linkedin.com/in/archanabharadwaj
-
-
----
-
-⭐ Support
-
-If you like this project, don’t forget to star ⭐ the repository!
+👤 Author
+Archana Bharadwaj
